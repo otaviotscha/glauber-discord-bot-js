@@ -1,0 +1,24 @@
+{
+  "name": "glauber-discord-bot-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch ./src/index.ts"
+  },
+  "author": "Otávio Luiz Tschá",
+  "license": "MIT",
+  "devDependencies": {
+    "tsx": "^3.12.3",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.8.0",
+    "discord.js": "12.5.3",
+    "dotenv": "^16.0.3",
+    "envalid": "^7.3.1",
+    "ffmpeg-static": "^5.1.0",
+    "ytdl-core": "^4.11.2"
+  }
+}
