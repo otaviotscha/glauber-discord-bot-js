@@ -28,19 +28,20 @@ client.on("ready", () => {
 
 client.on("message", async (message: Discord.Message) => {
   if (!message.content.startsWith(COMMAND_PREFIX) || message.author.bot) return;
+  const lowrcaseMessage = message.content.toLocaleLowerCase()
 
-  if (isCommand(message.content, Commands.PLAY)) {
-    const url = getFirstArg(message.content, Commands.PLAY);
+  if (isCommand(lowrcaseMessage, Commands.PLAY)) {
+    const url = getFirstArg(lowrcaseMessage, Commands.PLAY);
     return play(message, url);
   }
 
-  if (isCommand(message.content, Commands.QUIT)) return quit(message);
+  if (isCommand(lowrcaseMessage, Commands.QUIT)) return quit(message);
 
-  if (isCommand(message.content, Commands.PAUSE)) return pause(message);
+  if (isCommand(lowrcaseMessage, Commands.PAUSE)) return pause(message);
 
-  if (isCommand(message.content, Commands.RESUME)) return resume(message);
+  if (isCommand(lowrcaseMessage, Commands.RESUME)) return resume(message);
 
-  if (isCommand(message.content, Commands.SKIP)) return skip(message);
+  if (isCommand(lowrcaseMessage, Commands.SKIP)) return skip(message);
 
   replyMessage(message, "comando desconhecido!");
 });
